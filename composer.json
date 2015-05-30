@@ -2,8 +2,7 @@
     "name" : "letournel/path-finder",
     "description" : "Path finder algorithm",
     "authors" : [{
-            "name" : "Adrien LETOURNEL",
-            "email" : "adrien.letournel@gmail.com"
+            "name" : "Letournel"
         }
     ],
     "require": {
