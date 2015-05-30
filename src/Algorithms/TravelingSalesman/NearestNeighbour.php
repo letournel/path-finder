@@ -2,10 +2,10 @@
 
 namespace Letournel\PathFinder\Algorithms\TravelingSalesman;
 
-use Letournel\PathFinder\Core\Graph;
+use Letournel\PathFinder\AlgorithmTravelingSalesman;
+use Letournel\PathFinder\Core\NodeGraph;
 use Letournel\PathFinder\Core\NodeMap;
 use Letournel\PathFinder\Core\NodePath;
-use Letournel\PathFinder\AlgorithmTravelingSalesman;
 
 class NearestNeighbour implements AlgorithmTravelingSalesman
 {
@@ -17,14 +17,14 @@ class NearestNeighbour implements AlgorithmTravelingSalesman
     private
         $graph;
     
-    public function setGraph(Graph $graph)
+    public function setGraph(NodeGraph $graph)
     {
         $this->graph = $graph;
     }
     
     public function computeRoute()
     {
-        if(! $this->graph instanceof Graph)
+        if(! $this->graph instanceof NodeGraph)
         {
             throw new \RuntimeException('Invalid Graph');
         }

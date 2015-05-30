@@ -2,7 +2,7 @@
 
 namespace Letournel\PathFinder;
 
-use Letournel\PathFinder\Core\Grid;
+use Letournel\PathFinder\Core\NodeGrid;
 
 interface ConverterGrid
 {
@@ -10,7 +10,7 @@ interface ConverterGrid
     
     public function convertToMatrix($syntax);
     
-    public function convertToSyntax(Grid $grid);
+    public function convertToSyntax(NodeGrid $grid);
     
     public function findAndCreateNode($syntax, $charToFind);
     

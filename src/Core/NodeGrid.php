@@ -2,7 +2,7 @@
 
 namespace Letournel\PathFinder\Core;
 
-class Grid
+class NodeGrid
 {
     
     private

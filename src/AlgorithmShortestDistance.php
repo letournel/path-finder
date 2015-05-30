@@ -2,12 +2,12 @@
 
 namespace Letournel\PathFinder;
 
-use Letournel\PathFinder\Core\Grid;
 use Letournel\PathFinder\Core\Node;
+use Letournel\PathFinder\Core\NodeGrid;
 
 interface AlgorithmShortestDistance
 {
-    public function setGrid(Grid $grid);
+    public function setGrid(NodeGrid $grid);
     
     public function computeLength(Node $source, Node $target);
 }

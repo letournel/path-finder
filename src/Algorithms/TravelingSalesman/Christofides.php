@@ -3,7 +3,7 @@
 namespace Letournel\PathFinder\Algorithms\TravelingSalesman;
 
 use Letournel\PathFinder\AlgorithmTravelingSalesman;
-use Letournel\PathFinder\Core\Graph;
+use Letournel\PathFinder\Core\NodeGraph;
 
 class Christofides implements AlgorithmTravelingSalesman
 {
@@ -15,7 +15,7 @@ class Christofides implements AlgorithmTravelingSalesman
     private
         $graph;
     
-    public function setGraph(Graph $graph)
+    public function setGraph(NodeGraph $graph)
     {
         $this->graph = $graph;
     }

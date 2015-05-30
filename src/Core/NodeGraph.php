@@ -2,7 +2,7 @@
 
 namespace Letournel\PathFinder\Core;
 
-class Graph
+class NodeGraph
 {
     private
         $edges,

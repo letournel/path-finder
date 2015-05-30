@@ -3,8 +3,8 @@
 namespace Letournel\PathFinder\Algorithms\TravelingSalesman;
 
 use Letournel\PathFinder\AlgorithmTravelingSalesman;
-use Letournel\PathFinder\Core\Graph;
 use Letournel\PathFinder\Core\Node;
+use Letournel\PathFinder\Core\NodeGraph;
 use Letournel\PathFinder\Core\NodePath;
 
 class ThreeOpt implements AlgorithmTravelingSalesman
@@ -23,14 +23,14 @@ class ThreeOpt implements AlgorithmTravelingSalesman
         $this->existingRoute = $existingRoute;
     }
     
-    public function setGraph(Graph $graph)
+    public function setGraph(NodeGraph $graph)
     {
         $this->graph = $graph;
     }
     
     public function computeRoute()
     {
-        if(! $this->graph instanceof Graph)
+        if(! $this->graph instanceof NodeGraph)
         {
             throw new \RuntimeException('Invalid Graph');
         }

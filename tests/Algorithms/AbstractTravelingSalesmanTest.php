@@ -4,7 +4,7 @@ namespace Letournel\PathFinder\Tests\Algorithms;
 
 use Letournel\PathFinder\Algorithms;
 use Letournel\PathFinder\Converters\Grid\ASCIISyntax;
-use Letournel\PathFinder\Core\Graph;
+use Letournel\PathFinder\Core\NodeGraph;
 use Letournel\PathFinder\Core\Pairs;
 use Letournel\PathFinder\Distances;
 
@@ -113,7 +113,7 @@ abstract class AbstractTravelingSalesmanTest extends \PHPUnit_Framework_TestCase
         
         $matrix = $converter->convertToMatrix($syntax);
         $nodes = $converter->findAndCreateNodes($matrix, 'o');
-        $graph = new Graph($nodes);
+        $graph = new NodeGraph($nodes);
         if(count($nodes) < 2)
         {
             return $graph;

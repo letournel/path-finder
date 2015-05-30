@@ -2,7 +2,7 @@
 
 namespace Letournel\PathFinder\Tests\Converters\Grid;
 
-use Letournel\PathFinder\Core\Grid;
+use Letournel\PathFinder\Core\NodeGrid;
 use Letournel\PathFinder\Converters\Grid\ASCIISyntax;
 
 class ASCIISyntaxTest extends \PHPUnit_Framework_TestCase
@@ -10,7 +10,7 @@ class ASCIISyntaxTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider providerExemples
      */
-    public function testConvertToGrid($syntax, Grid $expectedGrid)
+    public function testConvertToGrid($syntax, NodeGrid $expectedGrid)
     {
         $converter = new ASCIISyntax();
         $grid = $converter->convertToGrid($syntax);
@@ -24,7 +24,7 @@ class ASCIISyntaxTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider providerExemples
      */
-    public function testConvertToSyntax($expectedSyntax, Grid $grid)
+    public function testConvertToSyntax($expectedSyntax, NodeGrid $grid)
     {
         $converter = new ASCIISyntax();
         $syntax = $converter->convertToSyntax($grid);
@@ -45,7 +45,7 @@ class ASCIISyntaxTest extends \PHPUnit_Framework_TestCase
             '      XXXX      ' . "\n" .
             '    XXXXXXXX    ' . "\n" .
             '                ' . "\n" ,
-            new Grid(
+            new NodeGrid(
                 array(
                     array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
                     array(1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1),
@@ -62,7 +62,7 @@ class ASCIISyntaxTest extends \PHPUnit_Framework_TestCase
             'X               ' . "\n" .
             'X               ' . "\n" .
             '                ' . "\n" ,
-            new Grid(
+            new NodeGrid(
                 array(
                     array(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1),
                     array(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),

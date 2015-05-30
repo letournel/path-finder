@@ -2,7 +2,7 @@
 
 namespace Letournel\PathFinder\Converters\Grid;
 
-use Letournel\PathFinder\Core\Grid;
+use Letournel\PathFinder\Core\NodeGrid;
 use Letournel\PathFinder\ConverterGrid;
 
 class DeclarativeSyntax implements ConverterGrid
@@ -12,7 +12,7 @@ class DeclarativeSyntax implements ConverterGrid
         
     }
     
-    public function convertToSyntax(Map $map)
+    public function convertToSyntax(NodeGrid $map)
     {
         
     }

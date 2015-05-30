@@ -2,8 +2,8 @@
 
 namespace Letournel\PathFinder\Converters\Grid;
 
-use Letournel\PathFinder\Core\Grid;
 use Letournel\PathFinder\Core\Node;
+use Letournel\PathFinder\Core\NodeGrid;
 use Letournel\PathFinder\Core\NodePath;
 use Letournel\PathFinder\ConverterGrid;
 
@@ -25,7 +25,7 @@ class ASCIISyntax implements ConverterGrid
             }
         }
         
-        return new Grid($matrix);
+        return new NodeGrid($matrix);
     }
     
     public function convertToMatrix($syntax)
@@ -40,7 +40,7 @@ class ASCIISyntax implements ConverterGrid
         return $matrix;
     }
     
-    public function convertToSyntax(Grid $grid)
+    public function convertToSyntax(NodeGrid $grid)
     {
         $syntax = '';
         

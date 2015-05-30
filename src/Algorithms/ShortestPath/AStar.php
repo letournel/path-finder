@@ -3,9 +3,9 @@
 namespace Letournel\PathFinder\Algorithms\ShortestPath;
 
 use Letournel\PathFinder\AlgorithmShortestPath;
-use Letournel\PathFinder\Core\Grid;
 use Letournel\PathFinder\Core\Heuristic;
 use Letournel\PathFinder\Core\Node;
+use Letournel\PathFinder\Core\NodeGrid;
 use Letournel\PathFinder\Core\NodeMap;
 use Letournel\PathFinder\Core\NodePath;
 use Letournel\PathFinder\Core\NodePriorityQueueMin;
@@ -29,7 +29,7 @@ class AStar implements AlgorithmShortestPath
         $this->heuristic = $heuristic;
     }
     
-    public function setGrid(Grid $grid)
+    public function setGrid(NodeGrid $grid)
     {
         $this->grid = $grid;
     }
@@ -43,7 +43,7 @@ class AStar implements AlgorithmShortestPath
     
     public function computePath(Node $source, Node $target)
     {
-        if(! $this->grid instanceof Grid)
+        if(! $this->grid instanceof NodeGrid)
         {
             throw new \RuntimeException('Invalid Grid');
         }
