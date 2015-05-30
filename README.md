@@ -74,11 +74,11 @@ Classes
 - **Grid\ASCIISyntax**: Allow converting map with an ASCII syntax to NodeMap, NodePath, Node Objects back and forth
 
 #### Distances Classes
-- **Chebyshev**: Implementation of the Chebyshev distance between nodes A and B which is max(|dx|, |dy|)
-- **Euclidean**: Implementation of the Euclidean distance between nodes A and B which is sqrt(|dx|^2 + |dy|^2)
-- **Manhattan**: Implementation of the Manhattan distance between nodes A and B which is |dx| + |dy|
-- **Octile** : Implementation of the Octile distance between nodes A and B which is (|dx| < |dy|) ? (sqrt(2) - 1) * |dx| + |dy|: (sqrt(2) - 1) * |dy| + |dx|
-- **Zero** : Implementation of the null or zero distance between nodes A and B which is always 0
+- **Chebyshev**: Compute the Chebyshev distance between two nodes which is max(|dx|, |dy|)
+- **Euclidean**: Compute the Euclidean distance between two nodes which is sqrt(|dx|^2 + |dy|^2)
+- **Manhattan**: Compute the Manhattan distance between two nodes which is |dx| + |dy|
+- **Octile** : Compute the Octile distance between two nodes which is (|dx| < |dy|) ? (sqrt(2) - 1) * |dx| + |dy|: (sqrt(2) - 1) * |dy| + |dx|
+- **Zero** : Compute the null or zero distance between two nodes A and B which is always 0
 
 
 Examples
