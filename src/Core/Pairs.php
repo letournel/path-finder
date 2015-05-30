@@ -46,7 +46,7 @@ class Pairs implements \Iterator
     
     public function key()
     {
-        return array($this->keys[$this->firstIndex], $this->keys[$this->secondIndex]);
+        return (int) (($this->maxIndex - ($this->firstIndex + 3) / 2) * $this->firstIndex + $this->secondIndex - 1);
     }
     
     public function next()

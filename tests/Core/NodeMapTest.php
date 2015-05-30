@@ -73,6 +73,9 @@ class NodeMapTest extends \PHPUnit_Framework_TestCase
 
     private function assertSamePath(array $a, array $b)
     {
-        $this->assertSame((new NodePath($a))->toString(), (new NodePath($b))->toString());
+        $aPath = new NodePath($a);
+        $bPath = new NodePath($b);
+        
+        $this->assertSame($aPath->toString(), $bPath->toString());
     }
 }
