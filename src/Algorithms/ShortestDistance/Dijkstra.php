@@ -43,7 +43,9 @@ class Dijkstra implements AlgorithmShortestDistance
         {
             throw new \RuntimeException('Invalid Graph');
         }
-        if(empty($this->distanceGraph->getEdgesFrom($source)))
+        
+        $edges = $this->distanceGraph->getEdgesFrom($source);
+        if(empty($edges))
         {
             $this->computeDistanceGraph(array($source));
         }
