@@ -41,37 +41,91 @@ Proposed TSP solving algorithms:
 
 Useful Classes
 --------------
-* Core\Heuristic: A distance with a floating weight.
-* Core\Node: A node entity used in NodeGrid, NodeGraph, NodeMap or NodePath which is basically a couple of coordinates (x, y) or indices (i,j)
-* Core\NodeGraph: A [graph](http://en.wikipedia.org/wiki/Graph_(mathematics)) is a set of vertices connected by edges.
+* *Core\Heuristic*
+
+A distance with a floating weight.
+
+* *Core\Node*
+
+A node entity used in NodeGrid, NodeGraph, NodeMap or NodePath which is basically a couple of coordinates (x, y) or indices (i,j)
+
+* *Core\NodeGraph*
+
+A [graph](http://en.wikipedia.org/wiki/Graph_(mathematics)) is a set of vertices connected by edges.
 Here, vertices are nodes and any couple of them can be connected by a edge with a floating value. By default, the graph is symmetric so the edge from vertex A to vertex B and vice versa have the same value.
-* Core\NodeGrid: Simply a matrix of Nodes with coordinates (x, y) or indices (i,j) using the following pattern:
+
+* *Core\NodeGrid*
+
+Simply a matrix of Nodes with coordinates (x, y) or indices (i,j) using the following pattern:
+```
     .--------------> j (width) coord y
     | 1,1 1,2 1,3
     | 2,1 2,2 2,3
     | 3,1 ...
     |
     i (height) coord x
-* Core\NodeMap: A map or dictionary which maps a Node (as key) to an object (as value) which can be a Node, boolean, ...
-* Core\NodePath: A linked list of successive Nodes which form a path
+```
 
-* Converters\Grid\ASCIISyntax: Allow converting map with a ascii syntax to NodeMap, NodePath, Node Objects back and forth
+* *Core\NodeMap*
 
-* Algorithms\ShortestDistance\Dijkstra: Compute shortest distance with Dijkstra algorithm
-* Algorithms\ShortestDistance\FloydWarshall: Compute shortest distance with FloydWarshall algorithm
+A map or dictionary which maps a Node (as key) to an object (as value) which can be a Node, boolean, ...
 
-* Algorithms\ShortestPath\AStar: Compute shortest path with AStar algorithm
-* Algorithms\ShortestPath\Dijkstra: Compute shortest path with Dijkstra algorithm
+* *Core\NodePath*
 
-* Algorithms\TravelingSalesman\NearestNeighbour: Compute shortest tour with NearestNeighbour algorithm
-* Algorithms\TravelingSalesman\ThreeOpt: Improve shortest tour with ThreeOpt algorithm
-* Algorithms\TravelingSalesman\TwoOpt: Improve shortest tour with TwoOpt algorithm
+A linked list of successive Nodes which form a path
 
-* Distances\Chebyshev: Implementation of the Chebyshev distance between nodes A and B which is max(|dx|, |dy|)
-* Distances\Euclidean: Implementation of the Euclidean distance between nodes A and B which is sqrt(|dx|^2 + |dy|^2)
-* Distances\Manhattan: Implementation of the Manhattan distance between nodes A and B which is |dx| + |dy|
-* Distances\Octile: Implementation of the Octile distance between nodes A and B which is (|dx| < |dy|) ? (sqrt(2) - 1) * |dx| + |dy|: (sqrt(2) - 1) * |dy| + |dx|
-* Distances\Zero: Implementation of the null or zero distance between nodes A and B which is always 0
+* *Converters\Grid\ASCIISyntax*
+
+Allow converting map with a ascii syntax to NodeMap, NodePath, Node Objects back and forth
+
+* *Algorithms\ShortestDistance\Dijkstra*
+
+Compute shortest distance with Dijkstra algorithm
+
+* *Algorithms\ShortestDistance\FloydWarshall*
+
+Compute shortest distance with FloydWarshall algorithm
+
+* *Algorithms\ShortestPath\AStar*
+
+Compute shortest path with AStar algorithm
+
+* *Algorithms\ShortestPath\Dijkstra*
+
+Compute shortest path with Dijkstra algorithm
+
+* *Algorithms\TravelingSalesman\NearestNeighbour*
+
+Compute shortest tour with NearestNeighbour algorithm
+
+* *Algorithms\TravelingSalesman\ThreeOpt*
+
+Improve shortest tour with ThreeOpt algorithm
+
+* *Algorithms\TravelingSalesman\TwoOpt*
+
+Improve shortest tour with TwoOpt algorithm
+
+* *Distances\Chebyshev*
+
+Implementation of the Chebyshev distance between nodes A and B which is max(|dx|, |dy|)
+
+* *Distances\Euclidean*
+
+Implementation of the Euclidean distance between nodes A and B which is sqrt(|dx|^2 + |dy|^2)
+
+* *Distances\Manhattan*
+
+Implementation of the Manhattan distance between nodes A and B which is |dx| + |dy|
+
+* *Distances\Octile*
+
+Implementation of the Octile distance between nodes A and B which is (|dx| < |dy|) ? (sqrt(2) - 1) * |dx| + |dy|: (sqrt(2) - 1) * |dy| + |dx|
+
+* *Distances\Zero*
+
+Implementation of the null or zero distance between nodes A and B which is always 0
+
 
 Quick start
 -----------
@@ -92,4 +146,5 @@ Use composer:
 Legal
 -----
 Letournel/PathFinder is Copyright(c) 2015 Letournel
+
 Code released under the MIT license
