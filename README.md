@@ -1,6 +1,7 @@
 PathFinder - The best route is the shortest
 ===========================================
 [![Build Status](https://travis-ci.org/letournel/path-finder.svg?branch=master)](https://travis-ci.org/letournel/path-finder)
+[![Coverage Status](https://coveralls.io/repos/letournel/path-finder/badge.svg)](https://coveralls.io/r/letournel/path-finder)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/letournel/path-finder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/letournel/path-finder/?branch=master)
 
 PathFinder is a standalone library aiming to implement famous path and route finding algorithms in PHP to solve classical problems such as:
