@@ -72,9 +72,9 @@ abstract class AbstractShortestAlgorithmTest extends \PHPUnit_Framework_TestCase
     {
         $converter = new ASCIISyntax();
         $matrix = $converter->convertToMatrix($syntax);
-        $source = $converter->findAndCreateNode($matrix, '>');
-        $target = $converter->findAndCreateNode($matrix, '<');
-        $expectedPath = $converter->generateNodePath($matrix, '>', '.', '<');
+        $source = $converter->findAndCreateNode($matrix, ASCIISyntax::IN);
+        $target = $converter->findAndCreateNode($matrix, ASCIISyntax::OUT);
+        $expectedPath = $converter->generateNodePath($matrix);
         $path = $algorithm->computePath($source, $target);
         
         $this->assertSame($expectedPath->toString(), $path->toString());
@@ -85,9 +85,9 @@ abstract class AbstractShortestAlgorithmTest extends \PHPUnit_Framework_TestCase
         $converter = new ASCIISyntax();
         $distance = new Distances\Euclidean();
         $matrix = $converter->convertToMatrix($syntax);
-        $source = $converter->findAndCreateNode($matrix, '>');
-        $target = $converter->findAndCreateNode($matrix, '<');
-        $expectedPath = $converter->generateNodePath($matrix, '>', '.', '<');
+        $source = $converter->findAndCreateNode($matrix, ASCIISyntax::IN);
+        $target = $converter->findAndCreateNode($matrix, ASCIISyntax::OUT);
+        $expectedPath = $converter->generateNodePath($matrix);
         $expectedLength = $expectedPath->computeLength($distance);
         $length = $algorithm->computeLength($source, $target);
         
