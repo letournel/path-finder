@@ -83,6 +83,29 @@ class NodePath implements \Countable, \Iterator
         return $length;
     }
     
+    public function contains(Node $needleNode)
+    {
+        foreach($this->path as $node)
+        {
+            if($node->toString() == $needleNode->toString())
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public function getStartNode()
+    {
+        return reset($this->path);
+    }
+    
+    public function getEndNode()
+    {
+        return end($this->path);
+    }
+    
     public function toString()
     {
         $nodesString = array();

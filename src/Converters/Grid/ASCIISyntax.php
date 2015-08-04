@@ -11,6 +11,9 @@ class ASCIISyntax implements ConverterGrid
 {
     const
         FREE = ' ',
+        IN   = '>',
+        OUT  = '<',
+        STEP = '.',
         WALL = 'X';
     
     public function convertToGrid($syntax)
@@ -57,6 +60,42 @@ class ASCIISyntax implements ConverterGrid
         return $syntax;
     }
     
+    public function convertToSyntaxWithPath(NodeGrid $grid, NodePath $path)
+    {
+        $syntax = '';
+        
+        $nodes = $grid->getNodes();
+        foreach($nodes as $line)
+        {
+            foreach($line as $node)
+            {
+                if(! $node->isWalkable())
+                {
+                    $syntax .= self::WALL;
+                }
+                elseif($node->toString() == $path->getStartNode()->toString())
+                {
+                    $syntax .= self::IN;
+                }
+                elseif($node->toString() == $path->getEndNode()->toString())
+                {
+                    $syntax .= self::OUT;
+                }
+                elseif($path->contains($node))
+                {
+                    $syntax .= self::STEP;
+                }
+                else
+                {
+                    $syntax .= self::FREE;
+                }
+            }
+            $syntax .= "\n";
+        }
+        
+        return $syntax;
+    }
+    
     public function findAndCreateNode($syntax, $charToFind)
     {
         for($x = 0; $x < count($syntax); $x++)
@@ -88,7 +127,7 @@ class ASCIISyntax implements ConverterGrid
         return $nodes;
     }
     
-    public function generateNodePath($matrix, $charSource, $charPath, $charTarget)
+    public function generateNodePath($matrix)
     {
         $deltas = array(
             array(-1, -1), array(-1, +0), array(-1, +1),
@@ -96,8 +135,8 @@ class ASCIISyntax implements ConverterGrid
             array(+1, -1), array(+1, +0), array(+1, +1),
         );
         
-        $node = $this->findAndCreateNode($matrix, $charSource);
-        $target = $this->findAndCreateNode($matrix, $charTarget);
+        $node = $this->findAndCreateNode($matrix, self::IN);
+        $target = $this->findAndCreateNode($matrix, self::OUT);
         $path = array($node);
         while($node->getId() !== $target->getId())
         {
@@ -117,7 +156,7 @@ class ASCIISyntax implements ConverterGrid
                     continue;
                 }
                 
-                if($matrix[$x][$y] === $charPath || $matrix[$x][$y] === $charTarget)
+                if($matrix[$x][$y] === self::STEP || $matrix[$x][$y] === self::OUT)
                 {
                     $matrix[$x][$y] = self::FREE;
                     $newNode = new Node($x, $y);

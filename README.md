@@ -93,7 +93,54 @@ ASCIISyntax for maps:
 
 SSP solving:
 ```php
-    TODO
+    require __DIR__ . '/vendor/autoload.php';
+    
+    use Letournel\PathFinder\Algorithms;
+    use Letournel\PathFinder\Converters\Grid\ASCIISyntax;
+    use Letournel\PathFinder\Core;
+    use Letournel\PathFinder\Distances;
+    
+    function solve($map, $algorithm)
+    {
+        $converter = new ASCIISyntax();
+        $grid = $converter->convertToGrid($map);
+        $matrix = $converter->convertToMatrix($map);
+        $source = $converter->findAndCreateNode($matrix, ASCIISyntax::IN);
+        $target = $converter->findAndCreateNode($matrix, ASCIISyntax::OUT);
+        
+        $algorithm->setGrid($grid);
+        $starttime = microtime(true);
+        $path = $algorithm->computePath($source, $target);
+        $endtime = microtime(true);
+        
+        if($path instanceof Core\NodePath)
+        {
+            echo "Path found in " . floor(($endtime - $starttime) * 1000) . " ms\n";
+            echo $converter->convertToSyntaxWithPath($grid, $path);
+        }
+        else
+        {
+            echo "No path found\n";
+        }
+    }
+    
+    $map =
+        '                ' . "\n" .
+        '.XXXXXX XXXXXXXX' . "\n" .
+        ' X   XX<X  X    ' . "\n" .
+        ' X X  XXX X   X ' . "\n" .
+        '   X           >' . "\n" ;
+    
+    $distance = new Distances\Euclidean();
+    $heuristic = new Core\Heuristic(new Distances\Euclidean(), 1);
+    
+    echo "Solving SSP with AStar:\n";
+    solve($map, new Algorithms\ShortestPath\AStar($distance, $heuristic));
+    echo "\n\n\n";
+    
+    echo "Solving SSP with Dijkstra:\n";
+    solve($map, new Algorithms\ShortestPath\Dijkstra($distance));
+    echo "\n\n\n";
 ```
 
 Installation
