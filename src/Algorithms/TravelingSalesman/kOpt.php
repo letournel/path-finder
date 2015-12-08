@@ -4,6 +4,7 @@ namespace Letournel\PathFinder\Algorithms\TravelingSalesman;
 
 use Letournel\PathFinder\AlgorithmTravelingSalesman;
 use Letournel\PathFinder\Core\NodeGraph;
+use Letournel\PathFinder\Core\NodePath;
 
 class kOpt implements AlgorithmTravelingSalesman
 {
@@ -28,15 +29,6 @@ class kOpt implements AlgorithmTravelingSalesman
     
     public function computeRoute()
     {
-        if(! $this->graph instanceof NodeGraph)
-        {
-            throw new \RuntimeException('Invalid Graph');
-        }
-        if(! $this->existingRoute instanceof NodePath)
-        {
-            throw new \RuntimeException('Invalid ExistingRoute');
-        }
-        
-        return $this->existingRoute;
+        throw new \RuntimeException('Not implemented');
     }
 }

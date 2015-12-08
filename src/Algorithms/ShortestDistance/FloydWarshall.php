@@ -28,7 +28,7 @@ class FloydWarshall implements AlgorithmShortestDistance
     public function setGrid(NodeGrid $grid)
     {
         $this->grid = $grid;
-        $this->distanceGraph = new NodeGraph($grid->buildWalkableNodesList(), false);
+        $this->distanceGraph = new NodeGraph($grid->buildWalkableNodesList());
     }
     
     public function computeLength(Node $source, Node $target)

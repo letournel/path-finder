@@ -1,6 +1,8 @@
 {
     "name" : "letournel/path-finder",
     "description" : "Path finder algorithm",
+    "keywords": ["graph algorithms", "shortest path", "travelling salesman", "astar", "dijkstra", "floydwarshall", "nearest neighbour", "2opt", "3opt"],
+    "license": "MIT",
     "authors" : [{
             "name" : "Adrien Letournel",
             "email" : "4dr13n.l370urn3l@gmail.com"

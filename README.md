@@ -31,7 +31,11 @@ Zero
 Roadmap
 -------
 
-- New SSP solving algorithms
+- New SSP solving algorithms:
+[Kruskal](http://en.wikipedia.org/wiki/Kruskal%27s_algorithm)
+[MooreBellmanFord](http://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
+[Prim](http://en.wikipedia.org/wiki/Prim%27s_algorithm)
+or others
 
 - New TSP solving algorithms:
 [Christofides](http://en.wikipedia.org/wiki/Christofides_algorithm),

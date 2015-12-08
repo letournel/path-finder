@@ -22,5 +22,6 @@ class Christofides implements AlgorithmTravelingSalesman
     
     public function computeRoute()
     {
+        throw new \RuntimeException('Not implemented');
     }
 }
