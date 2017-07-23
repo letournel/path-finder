@@ -149,7 +149,7 @@ Use composer:
 ```json
 {
     "require": {
-        "Letournel/PathFinder" : "~1.0"
+        "letournel/path-finder" : "~1.0"
     }
 }
 ```
