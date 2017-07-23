@@ -98,9 +98,11 @@ class ASCIISyntax implements ConverterGrid
     
     public function findAndCreateNode($syntax, $charToFind)
     {
-        for($x = 0; $x < count($syntax); $x++)
+        $xCount = count($syntax);
+        for($x = 0; $x < $xCount; $x++)
         {
-            for($y = 0; $y < count($syntax[$x]); $y++)
+            $yCount = count($syntax[$x]);
+            for($y = 0; $y < $yCount; $y++)
             {
                 if($syntax[$x][$y] === $charToFind)
                 {
@@ -113,9 +115,11 @@ class ASCIISyntax implements ConverterGrid
     public function findAndCreateNodes($syntax, $charToFind)
     {
         $nodes = array();
-        for($x = 0; $x < count($syntax); $x++)
+        $xCount = count($syntax);
+        for($x = 0; $x < $xCount; $x++)
         {
-            for($y = 0; $y < count($syntax[$x]); $y++)
+            $yCount = count($syntax[$x]);
+            for($y = 0; $y < $yCount; $y++)
             {
                 if($syntax[$x][$y] === $charToFind)
                 {
