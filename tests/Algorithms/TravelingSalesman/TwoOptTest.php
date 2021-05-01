@@ -1,6 +1,6 @@
 <?php
 
-namespace Letournel\PathFinder\Tests\Algorithms\ShortestDistance;
+namespace Letournel\PathFinder\Tests\Algorithms\TravelingSalesman;
 
 use Letournel\PathFinder\Algorithms;
 use Letournel\PathFinder\Tests\Algorithms\AbstractTravelingSalesmanTest;
